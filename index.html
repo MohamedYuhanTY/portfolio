@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Yuhan | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════ CANVAS BACKGROUND ═══════════════════════ -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- ═══════════════════════ CURSOR ═══════════════════════ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ═══════════════════════ NAV ═══════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-brand-mark nav-logo-mark" aria-label="Back to home">
+      <img src="LOGO.jpeg" alt="TY logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="mailto:yuhanty44@gmail.com?subject=Hire%20Me%20Inquiry" class="nav-cta">Hire Me →</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">
+        <span class="theme-icon sun" aria-hidden="true">☀</span>
+        <span class="theme-icon moon" aria-hidden="true">☾</span>
+        <span class="toggle-track" aria-hidden="true"></span>
+      </button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- ═══════════════════════ HERO ═══════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for work
+      </div>
+      <h1 class="hero-title">
+        <span class="line">Hi, I'm</span>
+        <span class="line gradient-text">Mohamed</span>
+        <span class="line gradient-text">Yuhan</span>
+      </h1>
+      <p class="hero-subtitle">
+        Full Stack Developer &amp; DSA enthusiast building scalable, high-performance digital solutions.
+      </p>
+      <div class="hero-cta-group">
+        <div class="hero-work-actions">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <button type="button" class="btn btn-secondary resume-button" id="resumeViewBtn">View Resume</button>
+        </div>
+        <a href="mailto:yuhanty44@gmail.com?subject=Let%27s%20Work%20Together&amp;body=Hi%20Mohamed,%0D%0A%0D%0AI%27d%20love%20to%20connect%20with%20you%20about..." class="btn btn-secondary">Get In Touch</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/tymohamedyuhan" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/share/qTgme9kEx65YNgles" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://www.instagram.com/uone07" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="mailto:yuhanty44@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <div class="hero-img-ring ring-1"></div>
+        <div class="hero-img-ring ring-2"></div>
+        <div class="hero-img-ring ring-3"></div>
+        <img src="profile.jpg" alt="Mohamed Yuhan" class="hero-img" loading="eager" fetchpriority="high" />
+        <div class="hero-img-glow"></div>
+      </div>
+      <div class="floating-card card-1">
+        <span class="fc-emoji">🧠</span>
+        <div>
+          <div class="fc-title">DSA &amp; Algorithms</div>
+          <div class="fc-sub">Problem Solver</div>
+        </div>
+      </div>
+      <div class="floating-card card-2">
+        <span class="fc-emoji">⚡</span>
+        <div>
+          <div class="fc-title">Full Stack Dev</div>
+          <div class="fc-sub">End-to-end builds</div>
+        </div>
+      </div>
+      <div class="floating-card card-3">
+        <span class="fc-emoji">🚀</span>
+        <div>
+          <div class="fc-title">5+ Projects</div>
+          <div class="fc-sub">Shipped &amp; live</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <div class="section-label reveal">About Me</div>
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <h2 class="section-title">Turning ideas into<br /><span class="gradient-text">scalable reality</span></h2>
+          <p class="about-text">
+            I'm a passionate Full Stack Developer from India, driven by a love for clean code, efficient algorithms, and building systems that scale. I thrive at the intersection of logic and creativity.
+          </p>
+          <p class="about-text">
+            With a strong foundation in Data Structures &amp; Algorithms, I craft end-to-end web applications — from robust backends to smooth, intuitive frontends. I'm always chasing the most optimal solution.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-num" data-target="5">0</div>
+              <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-target="2">0</div>
+              <div class="stat-label">Years Exp.</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-target="100">0</div>
+              <div class="stat-label">% Dedication</div>
+            </div>
+          </div>
+          <a href="mailto:yuhanty44@gmail.com?subject=Let%27s%20Work%20Together" class="btn btn-primary">Work with me</a>
+        </div>
+        <div class="about-right reveal">
+          <div class="about-card-wrap">
+            <div class="about-card">
+              <div class="ac-icon">🎓</div>
+              <div class="ac-content">
+                <div class="ac-title">Education</div>
+                <div class="ac-text">BSc Computer Science<br />Continuing Education</div>
+              </div>
+            </div>
+            <div class="about-card">
+              <div class="ac-icon">💼</div>
+              <div class="ac-content">
+                <div class="ac-title">Experience</div>
+                <div class="ac-text">Full Stack Developer<br />DSA &amp; Systems Design</div>
+              </div>
+            </div>
+            <div class="about-card">
+              <div class="ac-icon">📍</div>
+              <div class="ac-content">
+                <div class="ac-title">Location</div>
+                <div class="ac-text">India<br />Open to Remote</div>
+              </div>
+            </div>
+            <div class="about-card">
+              <div class="ac-icon">🌐</div>
+              <div class="ac-content">
+                <div class="ac-title">Languages</div>
+                <div class="ac-text">English, Tamil<br />Arabic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+  <section class="section skills" id="skills">
+    <div class="section-inner">
+      <div class="section-label reveal">What I Do</div>
+      <h2 class="section-title center reveal">Skills &amp; <span class="gradient-text">Expertise</span></h2>
+      <p class="section-desc center reveal">My technical toolkit — built for performance, scalability, and problem-solving.</p>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">⚡</div>
+          <h3>Full Stack Dev</h3>
+          <p>Building complete web apps from database to deployment — RESTful APIs, auth, and real-time features.</p>
+          <div class="skill-tags">
+            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🧠</div>
+          <h3>DSA &amp; Algorithms</h3>
+          <p>Strong command of data structures and algorithmic thinking — arrays, trees, graphs, DP, and more.</p>
+          <div class="skill-tags">
+            <span>LeetCode</span><span>Trees &amp; Graphs</span><span>Dynamic Prog.</span><span>Sorting</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🗄️</div>
+          <h3>Backend &amp; APIs</h3>
+          <p>Designing scalable server-side architecture with REST APIs, database schemas, and secure authentication.</p>
+          <div class="skill-tags">
+            <span>Node.js</span><span>Python</span><span>SQL</span><span>REST &amp; JSON</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">💻</div>
+          <h3>Front-End Dev</h3>
+          <p>Crafting responsive, fast, and accessible UIs with modern JavaScript and component-driven frameworks.</p>
+          <div class="skill-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🤖</div>
+          <h3>AI &amp; Automation</h3>
+          <p>Integrating AI/ML APIs and automation workflows to build smarter, more productive applications.</p>
+          <div class="skill-tags">
+            <span>Prompt Eng.</span><span>GPT APIs</span><span>Automation</span><span>Python</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">🔧</div>
+          <h3>Dev Tools &amp; Git</h3>
+          <p>Productive in modern developer toolchains — version control, CI/CD, and cloud deployment workflows.</p>
+          <div class="skill-tags">
+            <span>Git &amp; GitHub</span><span>Docker</span><span>VS Code</span><span>Linux CLI</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-card-icon">📜</div>
+          <h3>Python Certificate</h3>
+          <p>Completed the Python for Beginners course from Simplilearn SkillUp on 26 July 2026.</p>
+          <div class="skill-tags">
+            <span>Python</span><span>Beginner</span><span>Simplilearn</span><span>Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+  <section class="section projects" id="projects">
+    <div class="section-inner">
+      <div class="section-label reveal">Portfolio</div>
+      <h2 class="section-title center reveal">Featured <span class="gradient-text">Work</span></h2>
+      <p class="section-desc center reveal">Real-world projects built with clean code, scalable architecture, and a problem-first mindset.</p>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);">
+            <div class="project-mockup">⚡</div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Full Stack</span>
+            <h3>Full Stack Web App</h3>
+            <p>End-to-end web application with React frontend, Node.js + Express backend, MongoDB database, and JWT authentication.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);">
+            <div class="project-mockup">🧠</div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">DSA</span>
+            <h3>DSA Problem Library</h3>
+            <p>A curated collection of algorithmic solutions — trees, graphs, dynamic programming, sliding window, and sorting in Python &amp; JS.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+            <div class="project-mockup">🗄️</div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Backend</span>
+            <h3>REST API Service</h3>
+            <p>Scalable REST API with Node.js &amp; Express — featuring CRUD operations, middleware, pagination, and comprehensive error handling.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+            <div class="project-mockup">📊</div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Front-End Dev</span>
+            <h3>Analytics Dashboard</h3>
+            <p>Interactive data visualization dashboard with real-time metrics, charts, filter controls, and exportable reports.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-img" style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);">
+            <div class="project-mockup">🤖</div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">AI Integration</span>
+            <h3>AI-Powered Chat App</h3>
+            <p>Real-time chat application with GPT API integration, context-aware responses, and persistent conversation history.</p>
+          </div>
+        </div>
+        <div class="project-card reveal cta-card">
+          <div class="cta-card-inner">
+            <div class="cta-icon">🚀</div>
+            <h3>Your Project Next?</h3>
+            <p>Let's build something scalable &amp; powerful together. I'm open to exciting opportunities.</p>
+            <a href="mailto:yuhanty44@gmail.com?subject=New%20Project%20Inquiry&amp;body=Hi%20Mohamed,%0A%0AI%20have%20an%20exciting%20project%20I%27d%20like%20to%20discuss.%0A%0AProject%20details:%0A" class="btn btn-primary">Start a Project</a>
+          </div>
+        </div>
+      </div>
+      <!-- Google AI Professional Certificate (Coursera) -->
+      <div class="certificate-card reveal">
+        <button class="certificate-preview" type="button" data-certificate="coursera.jpeg" data-title="Google AI Professional Certificate" aria-label="Maximize Google AI Professional Certificate">
+          <img src="coursera.jpeg" alt="Google AI Professional Certificate from Google on Coursera" />
+          <span class="certificate-zoom">View certificate</span>
+        </button>
+        <div class="certificate-info">
+          <span class="project-tag">Google · Coursera</span>
+          <h3>Google AI Professional Certificate</h3>
+          <p>Earned from Google on Coursera. Demonstrates professional AI fluency, prompt engineering, data analysis, research, and building custom AI solutions.</p>
+          <div class="skill-tags">
+            <span>Google</span><span>Coursera</span><span>AI Specialization</span><span>Verified: VUXGCT40PGUT</span>
+          </div>
+          <div class="certificate-actions">
+            <a href="coursera.jpeg" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View Certificate ↗</a>
+            <a href="https://coursera.org/verify/professional-cert/VUXGCT40PGUT" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Verify Credential ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Structures & Algorithms in Python (CERTIFICATE 2) -->
+      <div class="certificate-card reveal">
+        <button class="certificate-preview" type="button" data-certificate="CERTIFICATE 2.jpg" data-title="Data Structures &amp; Algorithms in Python" aria-label="Maximize Data Structures &amp; Algorithms certificate">
+          <img src="CERTIFICATE 2.jpg" alt="Simplilearn Data Structures &amp; Algorithms in Python certificate" />
+          <span class="certificate-zoom">View certificate</span>
+        </button>
+        <div class="certificate-info">
+          <span class="project-tag">Simplilearn SkillUp</span>
+          <h3>Data Structures &amp; Algorithms in Python</h3>
+          <p>Comprehensive course covering algorithmic problem solving, time complexity analysis, and Python data structure implementations.</p>
+          <div class="skill-tags">
+            <span>Algorithms</span><span>Data Structures</span><span>Python</span><span>Code: 10721946</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python for Beginners (CERTIFICATE 1) -->
+      <div class="certificate-card reveal">
+        <button class="certificate-preview" type="button" data-certificate="CERTIFICATE 1.jpg" data-title="Python for Beginners Certificate" aria-label="Maximize Python for Beginners certificate">
+          <img src="CERTIFICATE 1.jpg" alt="Simplilearn SkillUp Python for Beginners certificate" />
+          <span class="certificate-zoom">View certificate</span>
+        </button>
+        <div class="certificate-info">
+          <span class="project-tag">Certificate</span>
+          <h3>Python for Beginners</h3>
+          <p>Successfully completed the online Python for Beginners course from Simplilearn SkillUp, demonstrating foundational Python programming skills.</p>
+          <div class="skill-tags">
+            <span>Simplilearn SkillUp</span><span>26 July 2026</span><span>Code: 10515031</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SmartMind Quiz Challenge (CERTIFICATE 3) -->
+      <div class="certificate-card reveal">
+        <button class="certificate-preview" type="button" data-certificate="CERTIFICATE 3.jpg" data-title="Certificate of Completion" aria-label="Maximize certificate of completion">
+          <img src="CERTIFICATE 3.jpg" alt="Certificate of completion" />
+          <span class="certificate-zoom">View certificate</span>
+        </button>
+        <div class="certificate-info">
+          <span class="project-tag">Certificate</span>
+          <h3>Certificate of Completion</h3>
+          <p>A professional learning achievement documenting completed training and continued development of practical technical skills.</p>
+          <div class="skill-tags">
+            <span>Professional Development</span><span>Completed Training</span><span>Verified Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+  <section class="section contact" id="contact">
+    <div class="section-inner">
+      <div class="section-label reveal">Get In Touch</div>
+      <h2 class="section-title center reveal">Let's <span class="gradient-text">Connect</span></h2>
+      <p class="section-desc center reveal">Have a project? A question? Or just want to say hi? My inbox is always open.</p>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info reveal">
+          <div class="contact-card cc-email">
+            <div class="cc-icon">📧</div>
+            <div class="cc-content">
+              <div class="cc-label">Email</div>
+              <a href="mailto:yuhanty44@gmail.com" class="cc-value">yuhanty44@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card cc-linkedin">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="cc-content">
+              <div class="cc-label">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/tymohamedyuhan" target="_blank" rel="noopener" class="cc-value">tymohamedyuhan</a>
+            </div>
+          </div>
+          <div class="contact-card cc-github">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </div>
+            <div class="cc-content">
+              <div class="cc-label">GitHub</div>
+              <a href="https://github.com/MohamedYuhanTY" target="_blank" rel="noopener" class="cc-value">View GitHub</a>
+            </div>
+          </div>
+          <div class="contact-card cc-instagram">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <div class="cc-content">
+              <div class="cc-label">Instagram</div>
+              <a href="https://www.instagram.com/uone07" target="_blank" rel="noopener" class="cc-value">@uone07</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span class="btn-text">Send Message ✉️</span>
+              <span class="btn-loading" hidden>Sending...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">TMY</div>
+      <p class="footer-text">Designed &amp; Built by <strong>Mohamed Yuhan</strong> · © 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="certificate-modal" id="certificateModal" aria-hidden="true">
+    <div class="certificate-modal-backdrop" data-certificate-close></div>
+    <div class="certificate-modal-content" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
+      <button class="certificate-modal-close" type="button" data-certificate-close aria-label="Close certificate preview">&times;</button>
+      <h2 id="certificateModalTitle">Certificate preview</h2>
+      <img id="certificateModalImage" src="" alt="" />
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ RESUME MODAL ═══════════════════════ -->
+  <div class="resume-modal" id="resumeModal" aria-hidden="true">
+    <div class="resume-modal-backdrop" data-resume-close></div>
+    <div class="resume-modal-content" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+      <div class="resume-modal-header">
+        <h2 id="resumeModalTitle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Mohamed Yuhan · Resume
+        </h2>
+        <button class="resume-modal-close" type="button" data-resume-close aria-label="Close resume preview">&times;</button>
+      </div>
+      <div class="resume-frame-wrap">
+        <iframe src="RESUME%20%281%29.pdf" id="resumeIframe" class="resume-iframe" title="Mohamed Yuhan Resume"></iframe>
+      </div>
+      <div class="resume-modal-footer">
+        <a href="RESUME%20%281%29.pdf" download="Mohamed-Yuhan-Resume.pdf" class="btn btn-primary resume-download-action">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Resume (PDF)
+        </a>
+        <a href="RESUME%20%281%29.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+          Open in New Tab ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
